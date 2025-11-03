@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, Upload, Share2, Sparkles, Play } from "lucide-react";
+import { Download, Upload, Share2, Sparkles, Play, FileText } from "lucide-react";
 import { Header } from "@/components/Header";
 import { OnboardingModal } from "@/components/OnboardingModal";
 import { RoutineCard } from "@/components/RoutineCard";
@@ -9,6 +9,7 @@ import { RunMode } from "@/components/RunMode";
 import { EmptyState } from "@/components/EmptyState";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import jsPDF from "jspdf";
 
 type RoutineBlock = {
   id: string;
@@ -61,58 +62,68 @@ export default function Home() {
       description: "AI is creating a personalized plan for you.",
     });
 
-    setTimeout(() => {
-      const mockRoutines: RoutineBlock[] = [
-        {
-          id: crypto.randomUUID(),
-          type: "motivational",
-          title: "Morning Mindfulness",
-          durationMinutes: 10,
-          difficulty: "easy",
-          progress: 0,
-          steps: [
-            { title: "Deep breathing exercise", duration: 3, voiceCue: "Breathe in slowly... hold... breathe out" },
-            { title: "Positive affirmations", duration: 5, voiceCue: "You are capable and strong" },
-            { title: "Set daily intentions", duration: 2, voiceCue: "Visualize your success today" },
-          ],
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          id: crypto.randomUUID(),
-          type: "exercise",
-          title: "Gentle Rehabilitation Exercises",
-          durationMinutes: 25,
-          difficulty: "medium",
-          progress: 0,
-          steps: [
-            { title: "Warm-up stretches", duration: 5, voiceCue: "Move slowly and gently" },
-            { title: "Range of motion exercises", duration: 10, voiceCue: "Focus on smooth movements" },
-            { title: "Strengthening exercises", duration: 7, voiceCue: "You're doing great" },
-            { title: "Cool down stretches", duration: 3, voiceCue: "Relax and breathe" },
-          ],
-        },
-        {
-          id: crypto.randomUUID(),
-          type: "cognitive",
-          title: "Memory & Focus Training",
-          durationMinutes: 15,
-          difficulty: "easy",
-          progress: 0,
-          steps: [
-            { title: "Pattern recognition game", duration: 7, voiceCue: "Take your time" },
-            { title: "Word association exercise", duration: 5, voiceCue: "Trust your instincts" },
-            { title: "Reflection and journaling", duration: 3 },
-          ],
-        },
-      ];
+        body: JSON.stringify(data),
+      });
 
-      setRoutineBlocks(mockRoutines);
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Failed to generate routine");
+      }
+
+      const routine = await response.json();
+      
+      // Flatten all blocks from all days into a single array for UI display
+      const allBlocks: RoutineBlock[] = routine.days.flatMap((day: any) => 
+        day.blocks.map((block: any) => ({
+          ...block,
+          id: block.id || crypto.randomUUID(),
+        }))
+      );
+
+      setRoutineBlocks(allBlocks);
+      
+      // Save the complete routine structure to backend
+      try {
+        await fetch("/api/save", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            routine,
+            metadata: {
+              name: `${data.injuryType} Recovery Plan`,
+              userProfile: data,
+            },
+          }),
+        });
+      } catch (saveError) {
+        console.error("Failed to save routine to backend:", saveError);
+        // Non-critical error, routine is still displayed
+      }
+      
       setIsGenerating(false);
       
       toast({
         title: "Routine created!",
         description: "Your personalized recovery plan is ready.",
       });
-    }, 2000);
+    } catch (error: any) {
+      console.error("Error generating routine:", error);
+      setIsGenerating(false);
+      
+      toast({
+        title: "Generation failed",
+        description: error.message || "Failed to generate routine. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleEdit = (block: RoutineBlock) => {
@@ -195,6 +206,79 @@ export default function Home() {
     input.click();
   };
 
+  const handleExportPDF = () => {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 20;
+    let yPos = 20;
+
+    // Title
+    doc.setFontSize(20);
+    doc.setTextColor(15, 98, 254);
+    doc.text("RehaBot: Recovery Routines", margin, yPos);
+    yPos += 10;
+
+    // Date
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Generated: ${new Date().toLocaleDateString()}`, margin, yPos);
+    yPos += 15;
+
+    // Routines
+    routineBlocks.forEach((block, index) => {
+      // Check if we need a new page
+      if (yPos > 250) {
+        doc.addPage();
+        yPos = 20;
+      }
+
+      // Block header
+      doc.setFontSize(14);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`${index + 1}. ${block.title}`, margin, yPos);
+      yPos += 7;
+
+      // Block details
+      doc.setFontSize(10);
+      doc.setTextColor(80, 80, 80);
+      doc.text(
+        `Type: ${block.type} | Duration: ${block.durationMinutes} min | Difficulty: ${block.difficulty}`,
+        margin + 5,
+        yPos
+      );
+      yPos += 10;
+
+      // Steps
+      doc.setFontSize(9);
+      block.steps.forEach((step, stepIndex) => {
+        if (yPos > 270) {
+          doc.addPage();
+          yPos = 20;
+        }
+        
+        const stepText = `  ${stepIndex + 1}. ${step.title} (${step.duration} min)`;
+        doc.text(stepText, margin + 10, yPos);
+        yPos += 5;
+
+        if (step.voiceCue) {
+          doc.setTextColor(120, 120, 120);
+          doc.text(`     "${step.voiceCue}"`, margin + 15, yPos);
+          doc.setTextColor(80, 80, 80);
+          yPos += 5;
+        }
+      });
+
+      yPos += 10;
+    });
+
+    doc.save("rehabot-routines.pdf");
+    
+    toast({
+      title: "PDF exported",
+      description: "Your routines have been saved as PDF.",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-card">
       <Header />
@@ -227,7 +311,16 @@ export default function Home() {
                   data-testid="button-export"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Export
+                  Export JSON
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={handleExportPDF}
+                  disabled={routineBlocks.length === 0}
+                  data-testid="button-export-pdf"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Export PDF
                 </Button>
                 <Button
                   onClick={() => setShowOnboarding(true)}
