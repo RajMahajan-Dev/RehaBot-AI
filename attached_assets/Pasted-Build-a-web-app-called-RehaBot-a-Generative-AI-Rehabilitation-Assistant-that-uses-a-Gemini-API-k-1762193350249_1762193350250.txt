@@ -1,0 +1,135 @@
+Build a web app called “RehaBot” — a Generative AI Rehabilitation Assistant that uses a Gemini API key to generate personalized, editable daily recovery routines (motivational, exercise, and cognitive).
+
+The app should have great visuals, editable routines, and NO plain text output — only interactive UI cards, timelines, and modals.
+
+🧩 Functional Overview
+
+Input: user fills form → injury/addiction type, mobility level, daily time, intensity, and goals.
+
+App calls Gemini API (through server proxy) → gets structured JSON routine.
+
+Output: visually rich cards/timeline view (not plain text).
+
+Each routine block = motivational | exercise | cognitive.
+
+Each block shows: title, duration, difficulty, progress, and edit/delete buttons.
+
+Inline editor to modify any routine part (steps, durations, notes).
+
+Store routines locally + option to export/import JSON.
+
+PDF export & shareable link feature (simple file store).
+
+🛠️ Tech Stack
+
+Frontend: React + Vite + Tailwind CSS + Framer Motion.
+
+Backend: Node.js + Express (proxy Gemini API).
+
+Storage: LocalStorage + JSON file API endpoints (/api/save, /api/load/:id).
+
+Security: GEMINI_API_KEY in .env, used only on server.
+
+Run command: npm install → npm run dev.
+
+🎨 Design Requirements
+
+Cool color theme:
+
+Primary: #0F62FE (blue)
+
+Secondary: #00B4D8 (teal)
+
+Accent: #7F96FF (lavender)
+
+Background gradient: linear-gradient(180deg, #0F172A 0%, #07122B 100%)
+
+Card background: translucent blur rgba(255,255,255,0.05)
+
+Use rounded buttons (2xl), glowing shadows, soft hover animations.
+
+Framer Motion for fade/slide transitions.
+
+Simple header with title “RehaBot: AI for Recovery”.
+
+Theme switcher (light / dark / high contrast).
+
+🧠 Gemini API Integration
+
+Use /api/generate route on backend.
+
+Request example:
+
+{
+  "seedPrompt": "Patient recovering from knee surgery, moderate mobility, wants motivation and physical therapy",
+  "tone": "encouraging",
+  "intensity": "medium",
+  "days": 3
+}
+
+
+Gemini must return valid JSON only, schema:
+
+{
+  "days": [
+    {
+      "day": 1,
+      "blocks": [
+        {
+          "type": "exercise",
+          "title": "Stretch & Balance",
+          "durationMinutes": 20,
+          "difficulty": "medium",
+          "steps": [
+            { "title": "Warm-up", "duration": 3, "voiceCue": "Breathe deep" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+Parse JSON → display blocks as interactive cards.
+
+💡 Features
+
+“Generate Routine” button → shows cards immediately with animations.
+
+“Edit Routine” → inline editor modal.
+
+“Run Mode” → progress bar, step timers, and optional voice cues.
+
+“Save / Load / Share / Export PDF” features.
+
+“Undo / Redo” actions with smooth UX.
+
+Onboarding modal (5 quick setup questions).
+
+📁 Output Files Expected
+
+Replit AI should generate a ready-to-run project with:
+
+/server/index.js        # Express server proxy
+/src/App.jsx
+/src/components/Card.jsx
+/src/components/EditorModal.jsx
+/src/components/Header.jsx
+/src/components/ThemeSwitcher.jsx
+/src/lib/api.js
+/tailwind.config.js
+/vite.config.js
+/.env.example
+/package.json
+
+⚡ Behavior
+
+Do not output long text from Gemini — show structured UI only.
+
+Smooth, minimal design.
+
+Focus on a calm, motivating visual feel for recovery.
+
+Add placeholder content if API key not set.
+
+When user pastes Gemini API key, store in .env and reload server.
