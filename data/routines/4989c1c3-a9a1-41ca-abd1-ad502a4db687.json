@@ -1,0 +1,256 @@
+{
+  "routine": {
+    "days": [
+      {
+        "day": 1,
+        "blocks": [
+          {
+            "id": "day1-motivational",
+            "type": "motivational",
+            "title": "Setting Your Intentions",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Acknowledge the Journey",
+                "duration": 2,
+                "voiceCue": "Take a deep breath. Acknowledge where you are today and the brave step you're taking towards healing. You've got this."
+              },
+              {
+                "title": "Focus on Small Wins",
+                "duration": 2,
+                "voiceCue": "Every gentle movement, every moment of self-care is a victory. Celebrate these small steps towards your goal."
+              },
+              {
+                "title": "Visualize Your Recovery",
+                "duration": 3,
+                "voiceCue": "Close your eyes and imagine your knee moving freely, pain-free. Feel the strength returning with each breath. Envision full mobility."
+              }
+            ]
+          },
+          {
+            "id": "day1-exercise",
+            "type": "exercise",
+            "title": "Gentle Knee Mobilization",
+            "durationMinutes": 18,
+            "difficulty": "medium",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Heel Slides (Supine)",
+                "duration": 5,
+                "voiceCue": "Lie on your back, slowly slide your heel towards your glute, bending your knee gently. Go only as far as comfortable. Perform 10 repetitions per leg, smooth and controlled."
+              },
+              {
+                "title": "Quadriceps Sets",
+                "duration": 5,
+                "voiceCue": "Lie or sit with your leg straight. Press the back of your knee into the surface, tightening your thigh muscle. Hold for 5 seconds, then release. Complete 10 repetitions, focusing on muscle activation."
+              },
+              {
+                "title": "Gentle Knee Extensions (Seated)",
+                "duration": 5,
+                "voiceCue": "Sit on a chair, slowly straighten your leg using your thigh muscle. Do not lock your knee at the top. Lower slowly with control. Perform 10 repetitions per leg."
+              },
+              {
+                "title": "Ankle Pumps",
+                "duration": 3,
+                "voiceCue": "Lie down, gently pump your ankles up and down, pointing and flexing your foot. This helps improve circulation. Complete 15-20 repetitions, keeping movements fluid."
+              }
+            ]
+          },
+          {
+            "id": "day1-cognitive",
+            "type": "cognitive",
+            "title": "Mindful Body Scan",
+            "durationMinutes": 5,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Settle In",
+                "duration": 1
+              },
+              {
+                "title": "Focus on the Knee Area",
+                "duration": 2
+              },
+              {
+                "title": "Observe Without Judgment",
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "blocks": [
+          {
+            "id": "day2-motivational",
+            "type": "motivational",
+            "title": "Embracing Consistency",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Reflect on Day 1",
+                "duration": 2,
+                "voiceCue": "Take a moment to acknowledge your commitment from yesterday. You showed up for yourself, and that's powerful."
+              },
+              {
+                "title": "Celebrate Your Effort",
+                "duration": 2,
+                "voiceCue": "Every consistent step builds momentum. Be proud of the effort you're putting into your healing. Your dedication is key."
+              },
+              {
+                "title": "Reinforce Daily Commitment",
+                "duration": 3,
+                "voiceCue": "Today is another opportunity. Remember why you started and commit to this present moment of healing and growth."
+              }
+            ]
+          },
+          {
+            "id": "day2-exercise",
+            "type": "exercise",
+            "title": "Strengthening Support Muscles",
+            "durationMinutes": 18,
+            "difficulty": "medium",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Glute Squeezes (Supine)",
+                "duration": 4,
+                "voiceCue": "Lie on your back, knees bent, feet flat. Gently squeeze your glutes together, hold for 3-5 seconds, then relax. Complete 10-12 repetitions, feeling the activation."
+              },
+              {
+                "title": "Straight Leg Raises (Supine)",
+                "duration": 6,
+                "voiceCue": "Lie on your back, one knee bent, the other straight. Keeping the straight leg active, lift it a few inches off the floor, hold briefly, then slowly lower. Perform 8-10 repetitions per leg."
+              },
+              {
+                "title": "Gentle Clam Shells (Side-Lying)",
+                "duration": 5,
+                "voiceCue": "Lie on your side, knees bent, feet together. Keeping your feet touching, slowly open your top knee like a clam shell. Only go as far as comfortable. Do 10 repetitions per side."
+              },
+              {
+                "title": "Pelvic Tilts",
+                "duration": 3,
+                "voiceCue": "Lie on your back, knees bent. Gently flatten your lower back into the floor by tightening your abdominal muscles. Hold for a few seconds, then release. Complete 10 repetitions."
+              }
+            ]
+          },
+          {
+            "id": "day2-cognitive",
+            "type": "cognitive",
+            "title": "Positive Affirmations for Healing",
+            "durationMinutes": 5,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Find a Quiet Space",
+                "duration": 1
+              },
+              {
+                "title": "Repeat Affirmations",
+                "duration": 2
+              },
+              {
+                "title": "Internalize and Believe",
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "blocks": [
+          {
+            "id": "day3-motivational",
+            "type": "motivational",
+            "title": "Envisioning Future Progress",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Acknowledge Your Progress",
+                "duration": 2,
+                "voiceCue": "Pause and appreciate how far you've come, even in these three days. Your body is resilient and responds to your care."
+              },
+              {
+                "title": "Visualize Greater Mobility",
+                "duration": 3,
+                "voiceCue": "Imagine yourself walking, climbing stairs, or engaging in activities you enjoy, with ease and comfort. See it, feel it."
+              },
+              {
+                "title": "Plan for Continued Recovery",
+                "duration": 2,
+                "voiceCue": "This routine is a stepping stone. Consider how you'll continue nurturing your knee and body beyond these three days."
+              }
+            ]
+          },
+          {
+            "id": "day3-exercise",
+            "type": "exercise",
+            "title": "Enhanced Range of Motion & Stability",
+            "durationMinutes": 18,
+            "difficulty": "medium",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Seated Knee Flexion/Extension (Active Assist)",
+                "duration": 6,
+                "voiceCue": "Sit on a chair, gently bend and straighten your knee. You can use your hands to assist the movement if needed, guiding it gently. Perform 8-10 repetitions per leg, focusing on smooth motion."
+              },
+              {
+                "title": "Wall Slides / Mini Squats (Supported)",
+                "duration": 6,
+                "voiceCue": "Stand with your back against a wall, feet shoulder-width apart. Slowly slide down into a mini squat, only a few inches, feeling your thigh muscles. Push back up. Complete 8-10 repetitions, using the wall for support."
+              },
+              {
+                "title": "Seated Heel Raises",
+                "duration": 3,
+                "voiceCue": "Sit on a chair, feet flat. Lift your heels off the floor, keeping the balls of your feet down. Hold briefly, then lower. Perform 12-15 repetitions, feeling your calf muscles."
+              },
+              {
+                "title": "Gentle Hamstring Stretch (Seated/Supine)",
+                "duration": 3,
+                "voiceCue": "Sit or lie down. Gently extend one leg forward, keeping the knee soft, and lean slightly forward (seated) or use a towel to gently pull the leg up (supine). Hold 20-30 seconds. Perform 1 repetition per leg, feeling a gentle stretch."
+              }
+            ]
+          },
+          {
+            "id": "day3-cognitive",
+            "type": "cognitive",
+            "title": "Gratitude for Your Body's Healing",
+            "durationMinutes": 5,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Reflect on Your Body's Efforts",
+                "duration": 1
+              },
+              {
+                "title": "Express Gratitude",
+                "duration": 2
+              },
+              {
+                "title": "Cultivate Self-Compassion",
+                "duration": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "name": "Knee Recovery Plan",
+    "createdAt": "2025-11-03T18:33:50.922Z"
+  }
+}

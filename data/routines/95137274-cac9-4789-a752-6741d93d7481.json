@@ -1,0 +1,235 @@
+{
+  "routine": {
+    "days": [
+      {
+        "day": 1,
+        "blocks": [
+          {
+            "id": "day1-motivational",
+            "type": "motivational",
+            "title": "Embracing the Journey",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Acknowledge Your Feelings",
+                "duration": 3,
+                "voiceCue": "Take a deep breath. It's okay to feel whatever you're feeling about your recovery. Acknowledge these emotions without judgment."
+              },
+              {
+                "title": "Set a Positive Intention",
+                "duration": 4,
+                "voiceCue": "Now, let's gently shift your focus. Picture a small, achievable step you can take today towards healing. Hold onto this positive intention."
+              }
+            ]
+          },
+          {
+            "id": "day1-exercise",
+            "type": "exercise",
+            "title": "Gentle Circulation & Unaffected Mobility",
+            "durationMinutes": 16,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Deep Breathing",
+                "duration": 4,
+                "voiceCue": "Sit comfortably with good posture. Inhale slowly through your nose, feeling your belly rise, then exhale completely through your mouth. Repeat for a calming effect."
+              },
+              {
+                "title": "Left Hand Finger Stretches",
+                "duration": 5,
+                "voiceCue": "Using your unaffected left hand, gently spread your fingers wide, then make a loose fist. Repeat slowly, focusing on each movement."
+              },
+              {
+                "title": "Shoulder Shrugs (Both Sides)",
+                "duration": 4,
+                "voiceCue": "Gently lift both shoulders towards your ears, then slowly lower them down. Feel the tension release. Keep your right wrist stable and supported."
+              },
+              {
+                "title": "Right Arm Visualization",
+                "duration": 3,
+                "voiceCue": "Close your eyes if comfortable. Visualize your right arm and wrist feeling strong and healthy. Imagine healthy blood flow and gentle healing energy."
+              }
+            ]
+          },
+          {
+            "id": "day1-cognitive",
+            "type": "cognitive",
+            "title": "Mindful Body Scan",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Focus on Sensation (Non-Injured Areas)",
+                "duration": 4,
+                "voiceCue": "Lie down or sit comfortably. Bring your awareness to your feet, then your legs, slowly moving up your body. Notice sensations without judgment, bypassing the injured area."
+              },
+              {
+                "title": "Gentle Awareness of Right Arm",
+                "duration": 3,
+                "voiceCue": "Now, gently bring a soft awareness to your right arm, without dwelling on pain. Just notice its presence and imagine it being comforted and supported."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "blocks": [
+          {
+            "id": "day2-motivational",
+            "type": "motivational",
+            "title": "Celebrating Small Victories",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Reflect on Day 1",
+                "duration": 3,
+                "voiceCue": "Think about yesterday's session. Even completing the routine is a victory! Acknowledge your commitment and effort."
+              },
+              {
+                "title": "Visualize Your Progress",
+                "duration": 4,
+                "voiceCue": "Close your eyes and imagine your right wrist growing stronger, piece by piece. See yourself comfortably performing daily tasks. This positive vision fuels your recovery."
+              }
+            ]
+          },
+          {
+            "id": "day2-exercise",
+            "type": "exercise",
+            "title": "Supportive Upper Body & Core",
+            "durationMinutes": 16,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Left Wrist Circles (Gentle)",
+                "duration": 4,
+                "voiceCue": "Gently make small circles with your left wrist, first clockwise then counter-clockwise. Focus on smooth, pain-free movement."
+              },
+              {
+                "title": "Scapular Squeezes",
+                "duration": 5,
+                "voiceCue": "Sit or stand tall. Gently squeeze your shoulder blades together as if holding a pencil between them. Hold for a few seconds, then release. Keep your right arm relaxed and supported."
+              },
+              {
+                "title": "Gentle Right Elbow Flexion/Extension",
+                "duration": 4,
+                "voiceCue": "Support your right forearm with your left hand or on a pillow. Slowly bend and straighten your right elbow, keeping your wrist in a neutral, stable position. Only move within a pain-free range."
+              },
+              {
+                "title": "Torso Twists (Seated)",
+                "duration": 3,
+                "voiceCue": "Sit comfortably. Gently twist your upper body to the left, then to the right, keeping your hips stable. Use your core, not your arms, for this movement."
+              }
+            ]
+          },
+          {
+            "id": "day2-cognitive",
+            "type": "cognitive",
+            "title": "Gratitude Practice",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Identify 3 Things You're Grateful For",
+                "duration": 4,
+                "voiceCue": "Take a moment to reflect. What are three things, big or small, you are grateful for today? Let these feelings of appreciation wash over you."
+              },
+              {
+                "title": "Focus on Inner Strength",
+                "duration": 3,
+                "voiceCue": "Feel grateful for your body's ability to heal and your own inner strength to persevere through this recovery journey."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "blocks": [
+          {
+            "id": "day3-motivational",
+            "type": "motivational",
+            "title": "Looking Ahead with Self-Compassion",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Acknowledge Challenges and Strengths",
+                "duration": 3,
+                "voiceCue": "Recovery has its ups and downs. Acknowledge any challenges you've faced, and remember the strength you've shown in facing them."
+              },
+              {
+                "title": "Affirm Your Commitment",
+                "duration": 4,
+                "voiceCue": "You are committed to your healing. Gently tell yourself, 'I am taking care of my body, and I am healing.' This affirmation reinforces your path to full recovery."
+              }
+            ]
+          },
+          {
+            "id": "day3-exercise",
+            "type": "exercise",
+            "title": "Gentle Mobilization & Relaxation",
+            "durationMinutes": 16,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Gentle Neck Rolls",
+                "duration": 4,
+                "voiceCue": "Slowly and gently roll your head from side to side, bringing your ear towards your shoulder. Avoid full circles initially. Feel the gentle stretch in your neck."
+              },
+              {
+                "title": "Right Arm Pendulum Swings (Supported)",
+                "duration": 5,
+                "voiceCue": "Lean forward, supporting your non-injured arm on a table. Let your right arm hang freely. Gently allow gravity to create small, pain-free swings forward and backward, then side to side. Keep the wrist still."
+              },
+              {
+                "title": "Left Hand Finger Opposition",
+                "duration": 4,
+                "voiceCue": "With your left hand, gently touch your thumb to each fingertip, one by one. This helps maintain dexterity and coordination."
+              },
+              {
+                "title": "Full Body Relaxation Scan",
+                "duration": 3,
+                "voiceCue": "Lie down comfortably. Systematically tense and then relax different muscle groups throughout your body, from your toes to your head, excluding your right wrist. Enjoy the feeling of release."
+              }
+            ]
+          },
+          {
+            "id": "day3-cognitive",
+            "type": "cognitive",
+            "title": "Planning for Continued Progress",
+            "durationMinutes": 7,
+            "difficulty": "easy",
+            "progress": 0,
+            "steps": [
+              {
+                "title": "Identify Next Small Steps",
+                "duration": 4,
+                "voiceCue": "Think about what you'd like to achieve in your recovery this coming week. Set one or two small, realistic goals for your continued healing."
+              },
+              {
+                "title": "Plan for Rest and Self-Care",
+                "duration": 3,
+                "voiceCue": "Remember that rest is a crucial part of recovery. Plan a time for intentional relaxation and self-care in your upcoming week. Your body needs it."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "name": "Wrist Fracture in Right Hand Recovery Plan",
+    "createdAt": "2025-11-03T18:29:18.346Z"
+  }
+}
